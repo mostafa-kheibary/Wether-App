@@ -113,7 +113,7 @@ body{
     text-align: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 150ms ease-out;
+    transition: all 120ms ease-out;
 }
 .show-modal{
     transform: translate(-50%,-50%) scale(1);
@@ -122,9 +122,10 @@ body{
 }
 .modal h4{
     font-size: 20px;
+    margin-bottom: 25px;
     font-weight: 100;
 }
-.modal input{
+.modal input ,.error input{
     margin-top: 20px;
     width: 100%;
     padding: 15px;
@@ -132,7 +133,11 @@ body{
     border: none;
     border-radius: 8px;
 }
-.modal button{
+.modal input:focus , .error input:focus{
+    background-color:#e2e2e2 ;
+    outline: none;
+}
+.modal button,.error button{
     position: absolute;
     right: 10px;
     top: 30px;
@@ -142,9 +147,10 @@ body{
     width: 80px;
     border: none;
     border-radius: 5px;
+    user-select: none;
     cursor: pointer;
 }
-.modal .inputs{
+.modal .inputs,.error{
     position: relative;
 }
 .modal .close{
@@ -153,3 +159,41 @@ body{
     right: 10px;
     cursor: pointer;
 }
+.error button{
+    top: 58px;
+}
+.error{
+    display: none;
+  }
+
+.load-3 .line:nth-last-child(1) {
+    animation: loadingC 0.6s 0.1s linear infinite;
+  }
+  .load-3 .line:nth-last-child(2) {
+    animation: loadingC 0.6s 0.2s linear infinite;
+  }
+  .load-3 .line:nth-last-child(3) {
+    animation: loadingC 0.6s 0.3s linear infinite;
+  }
+  .line {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #4b9cdb;
+  }
+
+  .load-3{
+      display: none;
+  }
+  @keyframes loadingC {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 15px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }

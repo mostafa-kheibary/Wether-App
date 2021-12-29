@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,53 @@
     <title>Wether aplication</title>
     <link rel="stylesheet" href="public/style/style.css">
 </head>
+
 <body>
+    <div class="error">
+        <h2>No matching location found.</h2>
+        <div class="inputs">
+            <form class="form">
+                <input class="changeloc" type="text" placeholder="los anglas . . .">
+                <button class="submit">submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="load-3">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
     <div class="container">
-        <div class="left">
+        <div class="left DayNight">
             <div class="upper-info">
-                <h2>tehran</h2>
-                <p>iran</p>
+                <h2 class="city-name"></h2>
+                <p class="contry-name"></p>
             </div>
             <div class="bottom-info">
-                <img src="public/image/day icon.png" alt="">
-                <h2>29 c</h2>
-                <p>clear</p>
+                <img class="air-info-img" src="public/image/day icon.png" alt="">
+                <h2 class="temp"></h2>
+                <p class="air-info"></p>
             </div>
         </div>
         <div class="right">
-            <h2>Tehran</h2>
+            <h2 class="city-name"></h2>
             <div class="info">
                 <div class="col">
-                    <p>wefwef :</p>
-                    <p class="light-text">234342</p>
+                    <p>Wind Spead :</p>
+                    <p class="light-text wind-spead"></p>
                 </div>
                 <div class="col">
-                    <p>wefwef :</p>
-                    <p class="light-text">377636</p>
+                    <p>Wind Diraction :</p>
+                    <p class="light-text wind-dir"></p>
                 </div>
                 <div class="col">
-                    <p>qwdwdfefewef :</p>
-                    <p class="light-text">3545</p>
+                    <p>Wind degree :</p>
+                    <p class="light-text wind-deg"></p>
                 </div>
             </div>
             <div class="location">
-                <button class="change-location">Change location</button>
+                <button class="change-location DayNight">Change location</button>
             </div>
         </div>
     </div>
@@ -49,14 +66,18 @@
         </div>
         <h4>select your contry</h4>
         <div class="inputs">
-            <input type="text" placeholder="los anglas . . .">
-        <button>submit</button>
+            <form class="form">
+                <input class="changeloc" type="text" placeholder="los anglas . . .">
+                <button class="submit">submit</button>
+            </form>
+
         </div>
-        
+
     </div>
 
 
     <script src="https://kit.fontawesome.com/cb3efb7182.js" crossorigin="anonymous"></script>
     <script src="public/js/app.js"></script>
 </body>
+
 </html>

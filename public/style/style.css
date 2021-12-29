@@ -100,3 +100,52 @@ body{
     padding: 15px;
     cursor: pointer;
 }
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-59%);
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.103);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    transform: scale(.8);
+    opacity: 0;
+    visibility: hidden;
+}
+.show-modal{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+.modal h4{
+    font-size: 25px;
+    font-weight: 300;
+}
+.modal input{
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    background-color: #ECECEC;
+    border: none;
+    border-radius: 8px;
+}
+.modal button{
+    position: absolute;
+    right: 30px;
+    top: 78px;
+    color: white;
+    background-color: #42B2CF;
+    padding: 6px;
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+    
+}
+.modal .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

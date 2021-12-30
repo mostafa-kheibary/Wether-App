@@ -1,7 +1,4 @@
 # Wether-App
-Wether application using vanilla and real Api frm wether https://www.weatherapi.com/
-
-# Wether-App
 
 Wether application using vanilla and real Api from: [www.weatherapi.com](https://www.weatherapi.com/)
 

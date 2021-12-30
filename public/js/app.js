@@ -46,7 +46,7 @@ function GetData(city) {
     loader.style.display = 'block';
     Error.style.display = 'none';
     Container.style.display= 'none';
-    fetch(`http://api.weatherapi.com/v1/current.json?key=3569642fe58b4939945183921212812&q=${city}&aqi=no`).then((response) => {
+    fetch(`https://api.weatherapi.com/v1/current.json?key=3569642fe58b4939945183921212812&q=${city}&aqi=no`).then((response) => {
         response.json().then((data) => {
             // loader
             loader.style.display = 'none';

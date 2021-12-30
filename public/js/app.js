@@ -1,20 +1,21 @@
-const Forms = document.querySelectorAll('.form');
-const loader = document.querySelector('.load-3')
-const Container = document.querySelector('.container');
-const Modal = document.querySelector('.modal');
-const ChangeLocButton = document.querySelector('.change-location');
-const CityName = document.querySelectorAll('.city-name');
-const ContryName = document.querySelector('.contry-name');
-const Temp = document.querySelector('.temp');
-const AirInfo = document.querySelector('.air-info');
-const AirImage = document.querySelector('.air-info-img');
-const Background = document.querySelectorAll('.DayNight');
-const WindSpead = document.querySelector('.wind-spead');
-const WindDir = document.querySelector('.wind-dir');
-const WindDeg = document.querySelector('.wind-deg');
-const Error = document.querySelector('.error');
-const InputLoc = document.querySelectorAll('.changeloc');
-const Submit = document.querySelectorAll('.submit');
+const $ = document;
+const Forms = $.querySelectorAll('.form');
+const loader = $.querySelector('.load-3')
+const Container = $.querySelector('.container');
+const Modal = $.querySelector('.modal');
+const ChangeLocButton = $.querySelector('.change-location');
+const CityName = $.querySelectorAll('.city-name');
+const ContryName = $.querySelector('.contry-name');
+const Temp = $.querySelector('.temp');
+const AirInfo = $.querySelector('.air-info');
+const AirImage = $.querySelector('.air-info-img');
+const Background = $.querySelectorAll('.DayNight');
+const WindSpead = $.querySelector('.wind-spead');
+const WindDir = $.querySelector('.wind-dir');
+const WindDeg = $.querySelector('.wind-deg');
+const Error = $.querySelector('.error');
+const InputLoc = $.querySelectorAll('.changeloc');
+const Submit = $.querySelectorAll('.submit');
 // event lithener
 ChangeLocButton.addEventListener('click', () => {
     ShowModal();
@@ -42,14 +43,15 @@ function ShowModal() {
 }
 
 function GetData(city) {
-    Container.style.display = 'none';
     loader.style.display = 'block';
     Error.style.display = 'none';
+    Container.style.display= 'none';
     fetch(`http://api.weatherapi.com/v1/current.json?key=3569642fe58b4939945183921212812&q=${city}&aqi=no`).then((response) => {
         response.json().then((data) => {
             // loader
-            Container.style.display = 'flex';
             loader.style.display = 'none';
+            Error.style.display = 'none';
+            Container.style = '';
             // name of the citys
             for (const Name of CityName) {
                 Name.innerHTML = data.location.name;
@@ -79,8 +81,8 @@ function GetData(city) {
             WindDir.innerHTML = data.current.wind_dir;
             WindDeg.innerHTML = data.current.wind_degree;
         }).catch(() => {
-            Container.style.display = 'none';
             Error.style.display = 'block';
+            Container.style.display = 'none'
         });
     });
 }
